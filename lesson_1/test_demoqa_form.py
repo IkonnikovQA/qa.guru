@@ -19,7 +19,7 @@ def test_demoqa_form():
     browser.element('[for="hobbies-checkbox-1"]').click()
     browser.element('[for="hobbies-checkbox-2"]').click()
     browser.element('[for="hobbies-checkbox-3"]').click()
-    browser.element('[id="uploadPicture"]').send_keys("C:/Users/atlet/PycharmProjects/pythonProject1/pythonProject/qa.guru/lesson_1/resources/WoWScrnShot_012423_172906.jpg")
+    browser.element('[id="uploadPicture"]').send_keys("C:/Users/atlet/PycharmProjects/pythonProject1/pythonProject/qa.guru/lesson_1/paint/WoWScrnShot_012423_172906.jpg")
     browser.element('[id="currentAddress"]').type('chikago john')
     browser.element('[for="hobbies-checkbox-3"]').click()
     browser.element('[id="react-select-3-option-1"]').click
