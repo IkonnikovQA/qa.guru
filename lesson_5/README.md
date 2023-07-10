@@ -57,3 +57,91 @@
 
 
 Удачи!
+
+# Полезные ссылки
+
+Ссылка на репозиторий
+https://github.com/yashaka/selene-in-action/tree/qaguru-lesson-selene-01-py06
+
+Ссылка на репозиторий из предыдущих версий урока (с дополнительными примерами команд в комментариях к коду) 
+https://github.com/yashaka/selene-in-action
+
+Укороченная версия урока в виде статьи – http://autotest.how/selenides-in-action-docs-md?lang=ru&code=py
+Селениды в действии (можно начать со статьи для более быстрого обзора возможностей Selene на практическом примере, и потом продолжить смотреть основную запись урока)
+
+Официальная документация
+https://yashaka.github.io/selene/
+
+
+Чат по Selene 
+https://t.me/selene_py_ru
+
+FAQ по Selene
+https://t.me/selene_py_ru/475
+
+Краткая шпаргалка по основным командам Selene
+https://t.me/selene_py_ru/7208
+
+Примеры использования Selene для разных контекстов запуска тестов
+https://github.com/yashaka/selene/tree/master/examples
+
+Если вместо серфинга по коду хочется более лаконично увидеть список настроек драйвера для такого рода кейсов – можно просто посмотреть примеры в этой статье о конфигурациях Selene из официальной документации.
+https://yashaka.github.io/selene/reference/configuration/
+
+Примеры создания объекта драйвера вручную с автоматической установкой драйверов браузеров с помощью библиотеки webdriver_manager.
+https://github.com/SergeyPirogov/webdriver_manager#install-manager
+
+
+
+
+
+Дополнительное видео от Якова по темам:
+https://www.loom.com/share/8dc071f0059348bfbeaf46a6a2daffda
+– Ветвления в тестах (команды matching(condition) и wait_until(condition)
+– Больше симуляции шорткатов типа Command + a
+– Фриз инспектора для заморозки пропадающих компонентов
+– Формат проекта для тестов (tests, .gitignore, requirements, root package, project name, conftest)
+– Опция config.base_url
+– Базовое управление конфигурацией через переменные среды
+
+Справка по синтаксису CSS-селекторов
+https://www.w3schools.com/cssref/css_selectors.php
+
+Шпаргалка по Селекторам: рецепты CSS, XPath и JS
+https://www.red-gate.com/simple-talk/wp-content/uploads/imported/1269-Locators_table_1_0_2.pdf?file=4937
+
+Введение в XPath на сравнении с CSS
+https://www.loom.com/share/77a4b79b773b43edad09ca2514c0ed4a?sid=74d730c6-f34a-48e4-99b7-cccad11ddc25
+
+Рецепт поиска по css-классу/class-name в XPath
+https://tanzu.vmware.com/content/blog/xpath-css-class-matching
+
+Статья о критериях хороших селекторов от Алексея Баранцева: «...как строить хорошие локаторы?»
+http://barancev.github.io/good-locators/
+
+Доклад о лучших практиках построения селекторов от Алексея Баранцева: «Десять правил построения хороших локаторов»
+https://www.youtube.com/watch?v=_TNh2ydpoOw&ab_channel=AlexeiBarantsev
+
+
+Дополнительно:
+
+На уроке я упоминал, что лучшее предусловие к тесту по открытию страницы – вызывать в тесте явно максимум в виде функции, но не скрывать внутри фикстуры полностью. Рекомендую по этой же теме почитать статью https://jamesnewkirk-typepad-com.translate.goog/posts/2007/09/why-you-should-.html?_x_tr_sl=en&_x_tr_tl=ru&_x_tr_hl=uk&_x_tr_pto=wapp. 
+Кому интересна вся эта философия, но также и практика https://www.amazon.com/gp/product/1617296279/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1617296279&linkCode=as2&tag=vkhorikov-20&linkId=2081de4b1cb7564cb9f95526533c3dae – книга Владимира Хорикова будет более основательным трудом. Предпочтение явным предусловиям также коррелирует с принципом «Explicit is better than implicit» из официального кодекса The Zen of Python https://peps.python.org/pep-0020/. Следуя этому же принципу, я явно прописывал в уроке scope='function' для фикстур, хотя для последних это и так является значением по умолчанию. Рекомендую ознакомиться и с другими принципами из этого кодекса. Они помогут понять, почему Python такой, какой он есть и также помогут писать более идиоматичный код.
+
+
+- Бонусное видео-продолжение к уроку «Фикстура для поддержки дополнительных браузеров в тесте»
+https://www.loom.com/share/8bb704416ba243ed9fbca46c8b9af7ef
+
+- С селеном или без? - отвечаем на вопрос в докладе Якова Крамаренко «Селениды против велосипедов»
+https://www.youtube.com/watch?v=yv0Qpkdh-pc&ab_channel=Heisenbug
+
+- Строим свой фреймворк типа Selene на основе Selenium Webdriver на воркшопе с Яковом Крамаренко: 
+
+Часть 1 https://www.youtube.com/watch?v=DPV__58mcoM&ab_channel=Heisenbug, 
+
+Часть 2 https://www.youtube.com/watch?v=sYK47fF2qFo&ab_channel=Heisenbug
+- Что нужно ,чтобы научиться свободно программировать и создавать свои фреймворки? – Ответ в этой карте обучения.
+https://miro.com/app/board/uXjVOztNojY=/?share_link_id=464580841774
+
+Общий конспект лекций курса 
+https://github.com/qa-guru/knowledge-base
