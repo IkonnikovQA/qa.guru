@@ -1,2 +1,5 @@
-selene>=2.0.0rc2
-pytest>=7.3.1
+selene==2.0.0rc2
+pytest==7.4.0
+requests==2.31.0
+pypdf==3.11.0
+openpyxl==3.1.2
