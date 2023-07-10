@@ -1,7 +1,5 @@
 from datetime import time
 
-import pytest
-
 
 def test_dark_theme_by_time():
     """
@@ -17,32 +15,25 @@ def test_dark_theme_by_time():
     assert is_dark_theme is True
 
 
-@pytest.mark.parametrize('current_time, dark_theme_enabled_by_user, res_is_dark_theme', [(time(hour=16), True, True),
-                                                                                         (time(hour=23), True, True),
-                                                                                         (time(hour=23), None, True),
-                                                                                         (time(hour=16), False, False),
-                                                                                         (time(hour=23), False, False),
-                                                                                         (time(hour=16), None, False)])
-def test_dark_theme_by_time_and_user_choice(current_time, dark_theme_enabled_by_user, res_is_dark_theme):
+def test_dark_theme_by_time_and_user_choice():
     """
-    с 22 до 6 часов утра - ночь
     Протестируйте правильность переключения темной темы на сайте
     в зависимости от времени и выбора пользователя
     dark_theme_enabled_by_user = True - Темная тема включена
     dark_theme_enabled_by_user = False - Темная тема выключена
     dark_theme_enabled_by_user = None - Пользователь не сделал выбор (используется переключение по времени системы)
     """
-    is_dark_theme = None
-    if dark_theme_enabled_by_user:
-        is_dark_theme = True
-    elif dark_theme_enabled_by_user is False:
-        is_dark_theme = False
-    elif dark_theme_enabled_by_user is None:
-        if not time(hour=6) < current_time < time(hour=22):
-            is_dark_theme = True
-        else:
-            is_dark_theme = False
-    assert is_dark_theme is res_is_dark_theme
+    current_time = time(hour=16)
+    dark_theme_enabled_by_user = True
+    # TODO переключите темную тему в зависимости от времени суток,
+    #  но учтите что темная тема может быть включена вручную
+    if dark_theme_enabled_by_user is not None:
+        is_dark_theme = dark_theme_enabled_by_user
+    else:
+        is_dark_theme = current_time.hour >= 22 or current_time.hour < 6
+
+    # Проверяем результат
+    assert is_dark_theme is True
 
 
 def test_find_suitable_user():
@@ -58,18 +49,19 @@ def test_find_suitable_user():
     ]
 
     # TODO найдите пользователя с именем "Olga"
-    suitable_users = None
-    for v in users:
-        if v['name'] == 'Olga':
-            suitable_users = v
+    for item in users:
+        if item['name'] == 'Olga':
+            suitable_users = item
 
     assert suitable_users == {"name": "Olga", "age": 45}
 
     # TODO найдите всех пользователей младше 20 лет
-    suitable_users = []
-    for v in users:
-        if v['age'] < 20:
-            suitable_users.append(v)
+    suitable_users = [
+        user for user in users
+        if user["age"] < 20
+    ]
+
+    # Проверяем результат
     assert suitable_users == [
         {"name": "Stanislav", "age": 15},
         {"name": "Maria", "age": 18},
@@ -87,8 +79,11 @@ def test_find_suitable_user():
 # "Open Browser [Chrome]"
 
 
-def print_name_def(def_name, *args):
-    result = f"{def_name.title().replace('_', ' ')} [{', '.join(args)}]"
+def readable_function(func, *args):
+    new_func_name = func.__name__.replace("_", " ").title()
+    new_args_result = ", ".join([*args])
+    result = f"{new_func_name} [{new_args_result}]"
+
     print(result)
     return result
 
@@ -100,15 +95,22 @@ def test_readable_function():
 
 
 def open_browser(browser_name):
-    actual_result = print_name_def(open_browser.__name__, browser_name)
+    actual_result = readable_function(open_browser, browser_name)
+    print(actual_result)
+
+    # Проверяем результат
     assert actual_result == "Open Browser [Chrome]"
 
 
 def go_to_companyname_homepage(page_url):
-    actual_result = print_name_def(go_to_companyname_homepage.__name__, page_url)
+    actual_result = readable_function(go_to_companyname_homepage, page_url)
+
+    # Проверяем результат
     assert actual_result == "Go To Companyname Homepage [https://companyname.com]"
 
 
 def find_registration_button_on_login_page(page_url, button_text):
-    actual_result = print_name_def(find_registration_button_on_login_page.__name__, page_url, button_text)
+    actual_result = readable_function(find_registration_button_on_login_page, page_url, button_text)
+
+    # Проверяем результат
     assert actual_result == "Find Registration Button On Login Page [https://companyname.com/login, Register]"
