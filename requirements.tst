@@ -3,3 +3,4 @@ pytest==7.4.0
 requests==2.31.0
 pypdf==3.11.0
 openpyxl==3.1.2
+allure-pytest
