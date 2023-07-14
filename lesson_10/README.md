@@ -121,6 +121,8 @@
 
 # Полезные ссылки
 
+[Ссылка на репозиторий](https://github.com/yashaka/demoqa-tests/tree/py-04-lesson-po-practice-form-task-final)
+
 [О синтаксисе классов в Python: «Инструментарий для работы с классами в Python»](https://www.youtube.com/watch?v=tfaFMfulY1M&ab_channel=IgorStarikov)
 
 [Мартин Фаулер о PageObject](https://martinfowler.com/bliki/PageObject.html)
