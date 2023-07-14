@@ -33,4 +33,3 @@ https://github.com/qa-guru/getting-started-python/wiki
 Уведомления в мессенджеры о прохождении автотестов 
 
 https://github.com/qa-guru/allure-notifications
-Как оплатить курс? Нужна помощь с домашним заданием? Пишите https://t.me/qa_guru_support
